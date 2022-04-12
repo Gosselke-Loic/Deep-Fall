@@ -1,0 +1,239 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&family=Nothing+You+Could+Do&family=Press+Start+2P&display=swap");
+
+$primary:       #9370db;
+$secondary:     #e455ae;
+$success:       #cb1dcd;
+$warning:       #fdf500;
+$light:         #d1c5c0;
+$info:          #1ac5b0;
+$danger:        #710000;
+$dark:          #272932;
+
+//all the html
+* {
+    box-sizing: border-box;
+    font-family: "Nothing You Could Do", arial;
+}
+
+//skip border left of buttons
+@mixin buttonCy {
+  
+    clip-path: polygon(
+      -15px 0%,
+      calc(100% + 15px) 0%,
+      calc(100% + 15px) 100%,
+      20px 100%,
+      -15px calc(100% - 35px)
+    ); 
+}
+
+//set background image
+#background {
+    background-image: url(Images/backgroundgame.jpg);
+    object-fit: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+    height: 100vh;
+}
+
+//styles for all btns
+.btn {
+    letter-spacing: 2px;
+    @include buttonCy();
+}
+
+//glow effect for title
+#neon {
+  text-shadow:
+      0 0 7px #fff,
+      0 0 10px rgb(255, 255, 255),
+      0 0 21px rgb(255, 255, 255),
+      0 0 35px #fdf500,
+      0 0 70px #fdf500,
+      0 0 85px #fdf500,
+      0 0 95px #fdf500,
+      0 0 120px #fdf500;
+}
+
+//styles for h1
+h1 {
+    font-family: 'Press Start 2P', sans-serif;
+    animation: flicker 4s infinite alternate;
+}
+
+//keyframes for intermitent title
+@keyframes flicker {
+    
+  0%, 18%, 22%, 25%, 53%, 57%, 100% {
+
+    text-shadow:
+    0 0 4px #fff,
+    0 0 11px #fff,
+    0 0 19px #fff,
+    0 0 40px #fdf500,
+    0 0 80px #fdf500,
+    0 0 90px #fdf500,
+    0 0 100px #fdf500,
+    0 0 130px #fdf500;
+  
+  }
+  
+  20%, 24%, 55% {        
+      text-shadow: none;
+  }    
+}
+
+//divider for center better than align center
+#divider1 {
+    height: 15vh;
+}
+
+//set more space for display cards
+#macro {
+    height: 33vh;
+}
+
+//set more space for display cards
+.macro2 { 
+    height: 18.2vh;
+}
+
+#selectDiv {
+  border-right: thin solid $dark;
+}
+
+//set more space for display cards
+.thor {
+    height: 66vh;
+}
+
+//space for the writer
+#writer {
+  height: 5%;
+}
+
+//spacing letter in the li 
+li {
+  letter-spacing: 2px;
+}
+
+#wakeUp {
+  border: solid 3px $danger;
+}
+
+#lineSpace {
+  letter-spacing: 2px;
+}
+
+//styles for the encounter button
+#encounter {
+    display: block;
+    letter-spacing: 3px;
+    font-family: "Nothing You Could Do", arial;
+    border-right: 3px solid $secondary;
+    position: relative;
+    transition: all .2s ease;
+  
+    @include buttonCy();
+  
+    &:hover {
+      border-bottom: 3px solid $secondary;
+      border-right: none;
+    }
+  
+    &:before, 
+    &:after {
+      content: 'Encounter!';
+      position: absolute;
+        top: 0;
+        left: 0;
+      padding: 8px 0;
+      width: 100%;
+      -webkit-clip: rect(0px, 0px, 0px, 0px);
+      clip: rect(0px, 0px, 0px, 0px);
+      background: $dark;
+      color: $warning;
+    }
+      
+    &:before {
+      left: -3px;
+      top: -2px;
+      text-shadow: 2px 0 #fff;
+      box-shadow: 2px 0 #fff;
+    }
+  
+    &:after {
+      left: 2px;
+      bottom: -2px;
+      text-shadow: -1px 0 #fff;
+      box-shadow: -1px 0 #fff;
+    }
+  
+    &:hover:before {
+      animation: glitch 1.5s infinite linear alternate-reverse;
+    }
+  
+    &:hover:after {
+      animation: glitch 2s infinite linear alternate;
+    }
+  }
+  
+  //keyframes for glitch encounter button
+  @keyframes glitch {
+    0% {
+      clip: rect(-3px, 400px, 0px, 0px);
+    }
+    5% {
+      clip: rect(0px, 400px, 0px, 0px);
+    }
+    11% {
+      clip: rect(-3px, 400px, 0px, 0px);
+    }
+    17% {
+      clip: rect(-3px, 400px, 0px, 0px);
+    }
+    23% {
+      clip: rect(100px, 400px, 100px, 0px);
+    }
+    29% {
+      clip: rect(0px, 400px, 400px, 0px);
+    }
+    35% {
+      clip: rect(100px, 400px, 0px, 0px);
+    }
+    41% {
+      clip: rect(0px, 400px, 400px, 0px);
+    }
+    47% {
+      clip: rect(100px, 400px, 0px, 0px);
+    }
+    52% {
+      clip: rect(-3px, 400px, 0px, 0px);
+    }
+    58% {
+      clip: rect(100px, 300px,100px, 0px);
+    }
+    64% {
+      clip: rect(0px, 300px, 0px, 0px);
+    }
+    70% {
+      clip: rect(100px, 300px, 100px, 0px);
+    }
+    76% {
+      clip: rect(0px, 300px, 0px, 0px);
+    }
+    82% {
+      clip: rect(0px, 300px, 0px, 0px);
+    }
+    88% {
+      clip: rect(0px, 300px, 0px, 0px);
+    }
+    95% {
+      clip: rect(0px, 300px, 0px, 0px);
+    }
+    100% {
+      clip: rect(0px, 300px, 0px, 0px);
+    }
+  }
+
+@import "../node_modules/bootstrap/scss/bootstrap";

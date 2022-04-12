@@ -1,0 +1,167 @@
+@import url("https://fonts.googleapis.com/css2?family=Libre+Barcode+39+Extended+Text&family=Nothing+You+Could+Do&family=Press+Start+2P&display=swap");
+
+$primary:       #9370db;
+$secondary:     #e455ae;
+$success:       #cb1dcd;
+$warning:       #fdf500;
+$light:         #d1c5c0;
+$info:          #1ac5b0;
+$danger:        #710000;
+$dark:          #272932;
+
+* {
+  box-sizing: border-box;
+}
+
+@mixin buttonCy {
+  
+  clip-path: polygon(
+    -15px 0%,
+    calc(100% + 15px) 0%,
+    calc(100% + 15px) 100%,
+    20px 100%,
+    -15px calc(100% - 35px)
+  ); 
+}
+
+#background {
+  background-image: url(Images/StartGame.gif);
+  object-fit: cover;
+  background-repeat: no-repeat;
+  background-position: center;
+  height: 100vh;
+}
+
+h1 {
+  font-family: 'Press Start 2P', sans-serif;
+}
+
+#divider {
+  height: 35vh;
+}
+
+#divider2 {
+  height: 50vh;
+}
+
+.rareB {
+  font-family: "Nothing You Could Do", arial;
+  letter-spacing: 1px;
+
+  @include buttonCy();
+}
+
+#start {
+  display: block;
+  letter-spacing: 3px;
+  font-family: "Nothing You Could Do", arial;
+  border-right: 3px solid $info;
+  position: relative;
+  transition: all .2s ease;
+
+  @include buttonCy();
+
+  &:hover {
+    border-bottom: 3px solid $info;
+    border-right: 2px solid $success;
+  }
+
+  &:before, 
+  &:after {
+    content: 'Start Game';
+    position: absolute;
+      top: 0;
+      left: 0;
+    padding: 8px 0;
+    width: 100%;
+    -webkit-clip: rect(0px, 0px, 0px, 0px);
+    clip: rect(0px, 0px, 0px, 0px);
+    background: $success;
+    color: $warning;
+  }
+    
+  &:before {
+    left: -3px;
+    top: -2px;
+    text-shadow: 2px 0 #fff;
+    box-shadow: 2px 0 #fff;
+  }
+
+  &:after {
+    left: 2px;
+    bottom: -2px;
+    text-shadow: -1px 0 #fff;
+    box-shadow: -1px 0 #fff;
+  }
+
+  &:hover:before {
+    animation: glitch 1.5s infinite linear alternate-reverse;
+  }
+
+  &:hover:after {
+    animation: glitch 2s infinite linear alternate;
+  }
+}
+
+@keyframes glitch {
+  0% {
+    clip: rect(-3px, 400px, 0px, 0px);
+  }
+  5% {
+    clip: rect(0px, 400px, 0px, 0px);
+  }
+  11% {
+    clip: rect(-3px, 400px, 0px, 0px);
+  }
+  17% {
+    clip: rect(-3px, 400px, 0px, 0px);
+  }
+  23% {
+    clip: rect(100px, 400px, 100px, 0px);
+  }
+  29% {
+    clip: rect(0px, 400px, 400px, 0px);
+  }
+  35% {
+    clip: rect(100px, 400px, 0px, 0px);
+  }
+  41% {
+    clip: rect(0px, 400px, 400px, 0px);
+  }
+  47% {
+    clip: rect(100px, 400px, 0px, 0px);
+  }
+  52% {
+    clip: rect(-3px, 400px, 0px, 0px);
+  }
+  58% {
+    clip: rect(100px, 300px,100px, 0px);
+  }
+  64% {
+    clip: rect(0px, 300px, 0px, 0px);
+  }
+  70% {
+    clip: rect(100px, 300px, 100px, 0px);
+  }
+  76% {
+    clip: rect(0px, 300px, 0px, 0px);
+  }
+  82% {
+    clip: rect(0px, 300px, 0px, 0px);
+  }
+  88% {
+    clip: rect(0px, 300px, 0px, 0px);
+  }
+  95% {
+    clip: rect(0px, 300px, 0px, 0px);
+  }
+  100% {
+    clip: rect(0px, 300px, 0px, 0px);
+  }
+}
+
+#copyright {
+  font-family: "Libre Barcode 39 Extended Text", sans-serif;
+}
+
+@import "../node_modules/bootstrap/scss/bootstrap";

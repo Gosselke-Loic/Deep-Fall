@@ -1,0 +1,49 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="stylesheet" href="./scss/start.css">
+    <title>Welcome</title>
+</head>
+<body id="background" class="container-fluid">
+
+    <header class="text-center">
+        <h1 class="fw-bold pt-5 text-warning">DEEP FALL</h1>
+    </header>
+
+    <div id="divider"></div>
+
+    <section id="divider2" class="container justify-content-center">
+        
+        <div class="row justify-content-center">
+            <div class="row text-center mb-3">
+                <div class="col text-warning" id="error"></div>
+            </div>
+            <div class="card-text mb-3 col-3">
+                <input id="heroN" class="bg-black text-warning form-control text-center" type="text" placeholder='let hero = "";'>
+            </div>
+            <div class="col-2">
+                <button id="create" class="btn rareB btn-success lw- text-warning border-0">Create!</button>
+            </div>
+        </div>
+        
+        <div class="card-footer">
+            <div class="row justify-content-center">
+                <div class="col-3">
+                    <a href="./index.html" id="start"  data-text="Let's go elsewhere" class="bg-success fs-5 text-uppercase fw-bolder p-2 text-warning text-decoration-none text-center">Let's go elsewhere</a>
+                </div>
+            </div> 
+        </div>
+    </section>  
+
+    <footer>
+        
+        <p id="copyright" class="h4 ms-5 fw-bold text-warning">@Copyright</p>
+        
+    </footer>
+    
+    <script type="module" src="./listenerStart.js"></script>
+</body>
+</html>
